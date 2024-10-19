@@ -1,6 +1,6 @@
 <form action="action_page.php">
   <div class="container">
-    <h1> New user Register for Jenkins Training at Devops TechLab. PipeLine Testing Auto Deploy </h1>
+    <h1> New user Register for Jenkins Training at Devops TechLab. PipeLine Testing Auto Build-Deploy </h1>
     <p>Please fill in this form to create an account. for help please contact us! </p>
     <hr>
      
