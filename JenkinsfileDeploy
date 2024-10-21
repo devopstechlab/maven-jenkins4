@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Copy Artifacts') {
+            steps {
+                echo "copy artifacts from build pipeline"
+                copyArtifacts filter: '**/*.war', fingerprintArtifacts: true, projectName: 'pipeline-build', selector: lastSuccessful()
+            }
+        }
+        stage('Deploy-to-tomcat') {
+            steps {
+                echo "Deploy on tomcat server"
+                deploy adapters: [tomcat9(credentialsId: 'tomcatcred', path: '', url: 'http://34.55.103.192:8090/')], contextPath: null, war: '**/*.war'
+            }
+        }        
+    }
+}
